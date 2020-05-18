@@ -20,6 +20,7 @@ class DoublyLinkedList {
   constructor(Node = DLLNode) {
     this.Node = Node;
     this._sentinel = new this.Node({ isSentinel: true });
+    this.total = 0;
   }
 
   _head() {
@@ -31,6 +32,9 @@ class DoublyLinkedList {
   }
 
   insertHead(element) {
+    const newNode = DLLNode.new(element, this._sentinel.next, this._sentinel);
+    this._sentinel.next = newNode;
+    this.total += 1;
   }
 
   insertTail(element) {
@@ -49,6 +53,7 @@ class DoublyLinkedList {
   }
 
   count() {
+    return this.total;
   }
 }
 
