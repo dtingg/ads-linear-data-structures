@@ -32,12 +32,23 @@ class DoublyLinkedList {
   }
 
   insertHead(element) {
-    const newNode = DLLNode.new(element, this._sentinel.next, this._sentinel);
-    this._sentinel.next = newNode;
+    const newHead = new DLLNode(element, this._sentinel.next, this._sentinel);    
+    const oldHead = this._sentinel.next;
+
+    this._sentinel.next = newHead;
+    oldHead.prev = newHead;
+
     this.total += 1;
   }
 
   insertTail(element) {
+    const newTail = new DLLNode(element, this._sentinel, this._sentinel.prev);
+    const oldTail = this._sentinel.prev;
+    
+    this._sentinel.prev = newTail;
+    oldTail.next = newTail;
+
+    this.total += 1;
   }
 
   removeHead() {
