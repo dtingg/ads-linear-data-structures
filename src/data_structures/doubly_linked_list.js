@@ -72,9 +72,22 @@ class DoublyLinkedList {
   }
 
   remove(node) {
+    const removed = node.remove();
+
+    if (removed !== undefined) {
+      this.total -= 1;
+    } 
+      
+    return removed;
   }
 
   forEach(callback) {
+    let currentNode = this._sentinel;
+
+    for (let i = 0; i < this.total; i += 1) {
+      currentNode = currentNode.next;
+      callback(currentNode.element, i, this);
+    }
   }
 
   count() {
