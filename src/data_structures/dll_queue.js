@@ -37,7 +37,7 @@ class DLLQueue {
    * @returns Stored element
    */
   dequeue() {
-
+    return this.storage.removeHead();
   }
 
   /**
