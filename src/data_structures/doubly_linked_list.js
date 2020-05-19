@@ -72,7 +72,13 @@ class DoublyLinkedList {
   }
 
   remove(node) {
-    const removed = node.remove();
+    let removed;
+
+    try { 
+      removed = node.remove();
+    } catch (error) {
+      return undefined;
+    }
 
     if (removed !== undefined) {
       this.total -= 1;
