@@ -63,6 +63,12 @@ class DoublyLinkedList {
   }
 
   removeTail() {
+    if (this.total === 0) {
+      return undefined;
+    } else {
+      this.total -= 1;
+      return this._sentinel.prev.remove();
+    }
   }
 
   remove(node) {
