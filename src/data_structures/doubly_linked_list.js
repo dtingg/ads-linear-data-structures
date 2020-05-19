@@ -54,6 +54,12 @@ class DoublyLinkedList {
   }
 
   removeHead() {
+    if (this.total === 0) {
+      return undefined;
+    } else {
+      this.total -= 1;
+      return this._sentinel.next.remove();
+    }
   }
 
   removeTail() {
