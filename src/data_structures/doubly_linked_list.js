@@ -39,7 +39,6 @@ class DoublyLinkedList {
     oldHead.prev = newHead;
 
     this.total += 1;
-
     return newHead;
   }
 
@@ -51,6 +50,7 @@ class DoublyLinkedList {
     oldTail.next = newTail;
 
     this.total += 1;
+    return newTail;
   }
 
   removeHead() {
