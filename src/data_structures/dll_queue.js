@@ -18,7 +18,7 @@ class DLLQueue {
    * @returns {ticket} Cancellation ticket
    */
   enqueue(element) {
-
+    this.storage.insertTail(element);
   }
 
   /**
@@ -46,7 +46,7 @@ class DLLQueue {
    * @returns {number} Current count
    */
   count() {
-
+    return this.storage.count();
   }
 
   /**
