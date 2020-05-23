@@ -62,12 +62,7 @@ class DLLQueue {
    * @param {forEachCallback} callback Function to invoke
    */
   forEach(callback) {
-    let currentNode = this.storage._sentinel;
-
-    for (let i = 0; i < this.storage.total; i += 1) {
-      currentNode = currentNode.next;
-      callback(currentNode.element, i, this);
-    }
+    this.storage.forEach(callback, this)
   }
 }
 

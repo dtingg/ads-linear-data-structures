@@ -87,12 +87,12 @@ class DoublyLinkedList {
     return removed;
   }
 
-  forEach(callback) {
+  forEach(callback, container=this) {
     let currentNode = this._sentinel;
 
     for (let i = 0; i < this.total; i += 1) {
       currentNode = currentNode.next;
-      callback(currentNode.element, i, this);
+      callback(currentNode.element, i, container);
     }
   }
 
